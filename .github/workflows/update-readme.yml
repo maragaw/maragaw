@@ -47,7 +47,7 @@ jobs:
 
             // Get current timestamp
             const now = new Date();
-            const timestamp = now.toISOString().replace('T', ' ').substring(0, 19) + ' UTC';
+            const timestamp = now.toISOString().replace('T', ' ').substring(0, 16);
 
             // Select random quote based on day (so it changes daily, not every run)
             const dayOfYear = Math.floor((now - new Date(now.getFullYear(), 0, 0)) / (1000 * 60 * 60 * 24));
@@ -71,11 +71,11 @@ jobs:
                 for (const commit of commits.slice(0, 1)) {
                   let msg = commit.message.split('\n')[0];
                   // Truncate message if too long
-                  if (msg.length > 45) {
-                    msg = msg.substring(0, 42) + '...';
+                  if (msg.length > 40) {
+                    msg = msg.substring(0, 37) + '...';
                   }
                   const time = new Date(event.created_at).toISOString().substring(0, 10);
-                  logEntries.push(`  [${time}] ${repo.padEnd(20).substring(0, 20)} ${msg}`);
+                  logEntries.push(`[${time}] ${repo}: ${msg}`);
                 }
                 if (logEntries.length >= 5) break;
               }
@@ -85,7 +85,7 @@ jobs:
 
             // Fallback if no activity
             if (logEntries.length === 0) {
-              logEntries = ['  [awaiting new commits...]'];
+              logEntries = ['[awaiting new commits...]'];
             }
 
             // Read current README
@@ -93,12 +93,13 @@ jobs:
 
             // Update LAST LOGIN section
             const lastLoginContent = `<!-- LAST_LOGIN_START -->
+\`\`\`bash
+matthew@systems:~$ last -1 matthew
+\`\`\`
 \`\`\`
 LAST LOGIN
-──────────────────────────────────────────────────────────────────────────────
-  timestamp   : ${timestamp}
-  from        : github.com
-  session     : active
+══════════════════════════════════════════════════════════════════════════════
+  matthew   pts/0   github.com   ${timestamp}
 \`\`\`
 <!-- LAST_LOGIN_END -->`;
 
@@ -109,10 +110,13 @@ LAST LOGIN
 
             // Update MOTD section
             const motdContent = `<!-- MOTD_START -->
+\`\`\`bash
+matthew@systems:~$ cat /etc/motd
 \`\`\`
-MESSAGE OF THE DAY
-──────────────────────────────────────────────────────────────────────────────
+\`\`\`
+══════════════════════════════════════════════════════════════════════════════
   ${selectedQuote}
+══════════════════════════════════════════════════════════════════════════════
 \`\`\`
 <!-- MOTD_END -->`;
 
@@ -123,10 +127,11 @@ MESSAGE OF THE DAY
 
             // Update ACTIVITY LOG section
             const activityLogContent = `<!-- ACTIVITY_LOG_START -->
+\`\`\`bash
+matthew@systems:~$ tail -5 /var/log/git.log
 \`\`\`
-SYSTEM LOG                                                        [recent activity]
-──────────────────────────────────────────────────────────────────────────────
-${logEntries.join('\n')}
+\`\`\`
+${logEntries.map(e => '  ' + e).join('\n')}
 \`\`\`
 <!-- ACTIVITY_LOG_END -->`;
 
