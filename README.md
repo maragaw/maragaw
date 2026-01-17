@@ -1,21 +1,21 @@
 ```
 ╭──────────────────────────────────────────────────────────────────────────────╮
-│  ●  ●  ●  Terminal                                                           │
+│  ●  ●  ●  matthew@sys:~$                                                     │
 ╰──────────────────────────────────────────────────────────────────────────────╯
 ```
 
 <div align="center">
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=14&duration=2000&pause=1000&color=00D9FF&center=true&vCenter=true&multiline=true&repeat=true&width=435&height=80&lines=%24+ssh+matthew%40systems;%3E+connection+established;%3E+loading+environment...)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=14&duration=2500&pause=1000&color=00D9FF&center=true&vCenter=true&multiline=true&repeat=true&width=580&height=100&lines=root%40localhost%3A~%24+ssh+-i+~%2F.ssh%2Fgithub+matthew%40sys;%3E+authenticating+with+key...;%3E+connection+established;%3E+welcome+to+matthew.sys)](https://git.io/typing-svg)
 
 </div>
 
-```bash
-matthew@systems:~$ whoami
+<br>
+
 ```
-```
+matthew@sys:~$ whoami
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 USER PROFILE
-══════════════════════════════════════════════════════════════════════════════
   user        : matthew
   role        : Software Engineer & Founder
   focus       : Backend Systems • Distributed Architecture • Cloud Infrastructure
@@ -23,39 +23,44 @@ USER PROFILE
   uptime      : 7+ years
 ```
 
+<br>
+
 <!-- LAST_LOGIN_START -->
-```bash
-matthew@systems:~$ last -1 matthew
 ```
-```
+matthew@sys:~$ last -1 matthew
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 LAST LOGIN
-══════════════════════════════════════════════════════════════════════════════
   matthew   pts/0   github.com   checking...
 ```
 <!-- LAST_LOGIN_END -->
 
+<br>
+
 <!-- MOTD_START -->
-```bash
-matthew@systems:~$ cat /etc/motd
 ```
-```
-══════════════════════════════════════════════════════════════════════════════
-  "First, solve the problem. Then, write the code." — John Johnson
-══════════════════════════════════════════════════════════════════════════════
+matthew@sys:~$ cat /etc/motd
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+{
+  "John Johnson": "First, solve the problem. Then, write the code."
+}
 ```
 <!-- MOTD_END -->
 
+<br>
+
 <!-- ACTIVITY_LOG_START -->
-```bash
-matthew@systems:~$ tail -5 /var/log/git.log
 ```
-```
+matthew@sys:~$ tail -5 /var/log/git.log
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   loading recent commits...
 ```
 <!-- ACTIVITY_LOG_END -->
 
-```bash
-matthew@systems:~$ ps aux --sort=-%cpu | head -6
+<br>
+
+```
+matthew@sys:~$ ps aux --sort=-%cpu | head -6
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
 
 <div align="center">
@@ -64,31 +69,30 @@ matthew@systems:~$ ps aux --sort=-%cpu | head -6
 
 </div>
 
-```bash
-matthew@systems:~$ neofetch --off
+<br>
+
+```
+matthew@sys:~$ neofetch --off
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+matthew@sys
+OS      = Arch Linux x86_64
+Shell   = zsh 5.9
+Term    = alacritty
+Uptime  = 7+ years
 ```
 
 <div align="center">
 
-```
-                    matthew@systems
-                    ───────────────────────
-                    OS: Arch Linux x86_64
-                    Shell: zsh 5.9
-                    Terminal: alacritty
-
-```
-
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=maragaw&bg_color=0D1117&color=00D9FF&line=00D9FF&point=FFFFFF&area=true&area_color=00D9FF&hide_border=true&custom_title=" width="95%" />
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=maragaw&bg_color=0D1117&color=00D9FF&line=00D9FF&point=FFFFFF&area=true&area_color=00D9FF&hide_border=true&custom_title=Contributions%2C%20filtered%20by%20hostname%3Dmatthew%40sys" width="95%" />
 
 </div>
 
-```bash
-matthew@systems:~$ pacman -Q | grep -E "(lang|runtime|data|cloud|tools)"
+<br>
+
 ```
-```
+matthew@sys:~$ pacman -Q --explicit
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 INSTALLED PACKAGES
-══════════════════════════════════════════════════════════════════════════════
 ```
 
 <p align="center">
@@ -123,18 +127,18 @@ INSTALLED PACKAGES
 </p>
 
 ```
-══════════════════════════════════════════════════════════════════════════════
-  languages   c++, java, python, typescript, go
-  runtime     docker, kubernetes, ecs/fargate, lambda, cloud-run
-  data        postgresql, redis, kafka, mongodb, elasticsearch
-  cloud       aws, gcp (compute, networking, storage, serverless)
-  tools       terraform, github-actions, datadog, prometheus, grafana
+  languages   : c++, java, python, typescript, go
+  runtime     : docker, kubernetes, ecs/fargate, lambda, cloud-run
+  data        : postgresql, redis, kafka, mongodb, elasticsearch
+  cloud       : aws, gcp (compute, networking, storage, serverless)
+  tools       : terraform, github-actions, datadog, prometheus, grafana
 ```
 
-```bash
-matthew@systems:~$ cat ~/.config/engineer.conf
+<br>
+
 ```
-```ini
+matthew@sys:~$ cat ~/.config/engineer.conf
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 [system]
 design_for_failure      = true
 observability_first     = true
@@ -145,12 +149,12 @@ clever_abstractions     = false
 principle = "Simple, observable systems over clever abstractions"
 ```
 
-```bash
-matthew@systems:~$ ip link show
+<br>
+
 ```
-```
+matthew@sys:~$ ip link show
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 NETWORK INTERFACES
-══════════════════════════════════════════════════════════════════════════════
 ```
 
 <p align="center">
@@ -160,29 +164,27 @@ NETWORK INTERFACES
 </p>
 
 ```
-  eth0: linkedin.com/in/matthew-aragaw    state UP
-  eth1: maragaw24@gmail.com               state UP
-  eth2: github.com/maragaw                state UP
+  1: lo     <LOOPBACK,UP>            state UNKNOWN
+  2: eth0   linkedin.com/matthew     state UP
+  3: eth1   maragaw24@gmail.com      state UP
+  4: eth2   github.com/maragaw       state UP
+```
+
+<br>
+
+```
+matthew@sys:~$ w
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  USER     TTY      FROM             LOGIN@   IDLE
+  visitor  pts/1    github.com       now      0:00
 ```
 
 <div align="center">
 
-```bash
-matthew@systems:~$ w
-```
-```
-  USER     TTY      FROM             IDLE
-  visitor  pts/1    github.com       0:00
-```
-
-![Profile Views](https://komarev.com/ghpvc/?username=maragaw&label=active_connections&color=00D9FF&style=for-the-badge)
-
-<br>
-
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=maragaw&theme=transparent&hide_border=true&stroke=00D9FF&ring=00D9FF&fire=00D9FF&currStreakNum=00D9FF&sideNums=00D9FF&currStreakLabel=00D9FF&sideLabels=00D9FF&dates=555555&background=0D1117" width="400" />
-
-```bash
-matthew@systems:~$ _
-```
+<img src="https://komarev.com/ghpvc/?username=maragaw&label=active_connections&color=00D9FF&style=for-the-badge" alt="active connections" />
 
 </div>
+
+```
+matthew@sys:~$ █
+```

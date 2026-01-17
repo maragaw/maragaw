@@ -26,23 +26,23 @@ jobs:
           script: |
             const fs = require('fs');
 
-            // Developer quotes for MOTD
+            // Developer quotes for MOTD (author, quote pairs)
             const quotes = [
-              '"First, solve the problem. Then, write the code." — John Johnson',
-              '"Any fool can write code that a computer can understand. Good programmers write code that humans can understand." — Martin Fowler',
-              '"Simplicity is prerequisite for reliability." — Edsger W. Dijkstra',
-              '"Make it work, make it right, make it fast." — Kent Beck',
-              '"The best code is no code at all." — Jeff Atwood',
-              '"Code is like humor. When you have to explain it, it\'s bad." — Cory House',
-              '"Programs must be written for people to read, and only incidentally for machines to execute." — Harold Abelson',
-              '"Deleted code is debugged code." — Jeff Sickel',
-              '"The most disastrous thing you can ever learn is your first programming language." — Alan Kay',
-              '"Measuring programming progress by lines of code is like measuring aircraft building progress by weight." — Bill Gates',
-              '"Walking on water and developing software from a specification are easy if both are frozen." — Edward V. Berard',
-              '"The only way to go fast, is to go well." — Robert C. Martin',
-              '"Perfection is achieved not when there is nothing more to add, but when there is nothing left to take away." — Antoine de Saint-Exupéry',
-              '"It works on my machine." — Every Developer',
-              '"There are only two hard things in Computer Science: cache invalidation and naming things." — Phil Karlton'
+              { author: "John Johnson", quote: "First, solve the problem. Then, write the code." },
+              { author: "Martin Fowler", quote: "Any fool can write code that a computer can understand. Good programmers write code that humans can understand." },
+              { author: "Edsger W. Dijkstra", quote: "Simplicity is prerequisite for reliability." },
+              { author: "Kent Beck", quote: "Make it work, make it right, make it fast." },
+              { author: "Jeff Atwood", quote: "The best code is no code at all." },
+              { author: "Cory House", quote: "Code is like humor. When you have to explain it, it's bad." },
+              { author: "Harold Abelson", quote: "Programs must be written for people to read, and only incidentally for machines to execute." },
+              { author: "Jeff Sickel", quote: "Deleted code is debugged code." },
+              { author: "Alan Kay", quote: "The most disastrous thing you can ever learn is your first programming language." },
+              { author: "Bill Gates", quote: "Measuring programming progress by lines of code is like measuring aircraft building progress by weight." },
+              { author: "Edward V. Berard", quote: "Walking on water and developing software from a specification are easy if both are frozen." },
+              { author: "Robert C. Martin", quote: "The only way to go fast, is to go well." },
+              { author: "Antoine de Saint-Exupéry", quote: "Perfection is achieved not when there is nothing more to add, but when there is nothing left to take away." },
+              { author: "Every Developer", quote: "It works on my machine." },
+              { author: "Phil Karlton", quote: "There are only two hard things in Computer Science: cache invalidation and naming things." }
             ];
 
             // Get current timestamp
@@ -93,12 +93,10 @@ jobs:
 
             // Update LAST LOGIN section
             const lastLoginContent = `<!-- LAST_LOGIN_START -->
-\`\`\`bash
-matthew@systems:~$ last -1 matthew
 \`\`\`
-\`\`\`
+matthew@sys:~$ last -1 matthew
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 LAST LOGIN
-══════════════════════════════════════════════════════════════════════════════
   matthew   pts/0   github.com   ${timestamp}
 \`\`\`
 <!-- LAST_LOGIN_END -->`;
@@ -110,13 +108,12 @@ LAST LOGIN
 
             // Update MOTD section
             const motdContent = `<!-- MOTD_START -->
-\`\`\`bash
-matthew@systems:~$ cat /etc/motd
 \`\`\`
-\`\`\`
-══════════════════════════════════════════════════════════════════════════════
-  ${selectedQuote}
-══════════════════════════════════════════════════════════════════════════════
+matthew@sys:~$ cat /etc/motd
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+{
+  "${selectedQuote.author}": "${selectedQuote.quote}"
+}
 \`\`\`
 <!-- MOTD_END -->`;
 
@@ -127,10 +124,9 @@ matthew@systems:~$ cat /etc/motd
 
             // Update ACTIVITY LOG section
             const activityLogContent = `<!-- ACTIVITY_LOG_START -->
-\`\`\`bash
-matthew@systems:~$ tail -5 /var/log/git.log
 \`\`\`
-\`\`\`
+matthew@sys:~$ tail -5 /var/log/git.log
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ${logEntries.map(e => '  ' + e).join('\n')}
 \`\`\`
 <!-- ACTIVITY_LOG_END -->`;
@@ -145,7 +141,7 @@ ${logEntries.map(e => '  ' + e).join('\n')}
 
             console.log('README updated successfully');
             console.log('Last login:', timestamp);
-            console.log('Quote:', selectedQuote);
+            console.log('Quote:', selectedQuote.author, '-', selectedQuote.quote);
             console.log('Activity entries:', logEntries.length);
 
       - name: Commit and push if changed
