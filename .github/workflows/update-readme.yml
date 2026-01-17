@@ -1,0 +1,151 @@
+name: Update README
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'  # Run every 6 hours
+  push:
+    branches:
+      - main
+  workflow_dispatch:  # Allow manual trigger
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Update README with dynamic content
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+
+            // Developer quotes for MOTD
+            const quotes = [
+              '"First, solve the problem. Then, write the code." — John Johnson',
+              '"Any fool can write code that a computer can understand. Good programmers write code that humans can understand." — Martin Fowler',
+              '"Simplicity is prerequisite for reliability." — Edsger W. Dijkstra',
+              '"Make it work, make it right, make it fast." — Kent Beck',
+              '"The best code is no code at all." — Jeff Atwood',
+              '"Code is like humor. When you have to explain it, it\'s bad." — Cory House',
+              '"Programs must be written for people to read, and only incidentally for machines to execute." — Harold Abelson',
+              '"Deleted code is debugged code." — Jeff Sickel',
+              '"The most disastrous thing you can ever learn is your first programming language." — Alan Kay',
+              '"Measuring programming progress by lines of code is like measuring aircraft building progress by weight." — Bill Gates',
+              '"Walking on water and developing software from a specification are easy if both are frozen." — Edward V. Berard',
+              '"The only way to go fast, is to go well." — Robert C. Martin',
+              '"Perfection is achieved not when there is nothing more to add, but when there is nothing left to take away." — Antoine de Saint-Exupéry',
+              '"It works on my machine." — Every Developer',
+              '"There are only two hard things in Computer Science: cache invalidation and naming things." — Phil Karlton'
+            ];
+
+            // Get current timestamp
+            const now = new Date();
+            const timestamp = now.toISOString().replace('T', ' ').substring(0, 19) + ' UTC';
+
+            // Select random quote based on day (so it changes daily, not every run)
+            const dayOfYear = Math.floor((now - new Date(now.getFullYear(), 0, 0)) / (1000 * 60 * 60 * 24));
+            const quoteIndex = dayOfYear % quotes.length;
+            const selectedQuote = quotes[quoteIndex];
+
+            // Fetch recent commits across all repos
+            let logEntries = [];
+            try {
+              const { data: events } = await github.rest.activity.listPublicEventsForUser({
+                username: 'maragaw',
+                per_page: 15
+              });
+
+              // Filter for push events and format as log entries
+              const pushEvents = events.filter(e => e.type === 'PushEvent');
+
+              for (const event of pushEvents) {
+                const repo = event.repo.name.split('/')[1];
+                const commits = event.payload.commits || [];
+                for (const commit of commits.slice(0, 1)) {
+                  let msg = commit.message.split('\n')[0];
+                  // Truncate message if too long
+                  if (msg.length > 45) {
+                    msg = msg.substring(0, 42) + '...';
+                  }
+                  const time = new Date(event.created_at).toISOString().substring(0, 10);
+                  logEntries.push(`  [${time}] ${repo.padEnd(20).substring(0, 20)} ${msg}`);
+                }
+                if (logEntries.length >= 5) break;
+              }
+            } catch (e) {
+              console.log('Could not fetch events:', e.message);
+            }
+
+            // Fallback if no activity
+            if (logEntries.length === 0) {
+              logEntries = ['  [awaiting new commits...]'];
+            }
+
+            // Read current README
+            let readme = fs.readFileSync('README.md', 'utf8');
+
+            // Update LAST LOGIN section
+            const lastLoginContent = `<!-- LAST_LOGIN_START -->
+\`\`\`
+LAST LOGIN
+──────────────────────────────────────────────────────────────────────────────
+  timestamp   : ${timestamp}
+  from        : github.com
+  session     : active
+\`\`\`
+<!-- LAST_LOGIN_END -->`;
+
+            readme = readme.replace(
+              /<!-- LAST_LOGIN_START -->[\s\S]*?<!-- LAST_LOGIN_END -->/,
+              lastLoginContent
+            );
+
+            // Update MOTD section
+            const motdContent = `<!-- MOTD_START -->
+\`\`\`
+MESSAGE OF THE DAY
+──────────────────────────────────────────────────────────────────────────────
+  ${selectedQuote}
+\`\`\`
+<!-- MOTD_END -->`;
+
+            readme = readme.replace(
+              /<!-- MOTD_START -->[\s\S]*?<!-- MOTD_END -->/,
+              motdContent
+            );
+
+            // Update ACTIVITY LOG section
+            const activityLogContent = `<!-- ACTIVITY_LOG_START -->
+\`\`\`
+SYSTEM LOG                                                        [recent activity]
+──────────────────────────────────────────────────────────────────────────────
+${logEntries.join('\n')}
+\`\`\`
+<!-- ACTIVITY_LOG_END -->`;
+
+            readme = readme.replace(
+              /<!-- ACTIVITY_LOG_START -->[\s\S]*?<!-- ACTIVITY_LOG_END -->/,
+              activityLogContent
+            );
+
+            // Write updated README
+            fs.writeFileSync('README.md', readme);
+
+            console.log('README updated successfully');
+            console.log('Last login:', timestamp);
+            console.log('Quote:', selectedQuote);
+            console.log('Activity entries:', logEntries.length);
+
+      - name: Commit and push if changed
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add README.md
+          git diff --quiet && git diff --staged --quiet || (git commit -m "chore: update README with latest activity" && git push)
