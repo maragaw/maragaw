@@ -45,14 +45,20 @@ SYSTEM LOG                                                        [recent activi
 ```
 <!-- ACTIVITY_LOG_END -->
 
+<div align="center">
+
 ```
-ACTIVE PROCESSES
+ACTIVE PROCESSES                                                      [live]
 ──────────────────────────────────────────────────────────────────────────────
-  PID   NAME                              STATUS      UPTIME
-  001   trading-platform                  running     ████████░░
-  002   analytics-infrastructure          running     ██████████
-  003   interview-prep                    active      ███░░░░░░░
 ```
+
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=12&duration=3000&pause=500&color=00D9FF&center=true&vCenter=true&multiline=true&repeat=true&width=600&height=140&lines=PID+++NAME+++++++++++++++++++++++++++STATUS++++++UPTIME;001+++distributed-infra+++++++++++++running+++++%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%91%E2%96%91;002+++analytics-platform++++++++++++running+++++%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88;003+++machine-learning++++++++++++++active++++++%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%91%E2%96%91%E2%96%91%E2%96%91;004+++systems-core++++++++++++++++++running+++++%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%91;005+++cloud-orchestration+++++++++++active++++++%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%91%E2%96%91%E2%96%91%E2%96%91%E2%96%91)](https://git.io/typing-svg)
+
+```
+──────────────────────────────────────────────────────────────────────────────
+```
+
+</div>
 
 <div align="center">
 
@@ -71,34 +77,44 @@ INSTALLED MODULES
 ```
 
 <p align="center">
-<img src="https://img.shields.io/badge/python-00D9FF?style=flat-square&logo=python&logoColor=0D1117&labelColor=0D1117" />
-<img src="https://img.shields.io/badge/go-00D9FF?style=flat-square&logo=go&logoColor=0D1117&labelColor=0D1117" />
-<img src="https://img.shields.io/badge/node.js-00D9FF?style=flat-square&logo=nodedotjs&logoColor=0D1117&labelColor=0D1117" />
-<img src="https://img.shields.io/badge/docker-00D9FF?style=flat-square&logo=docker&logoColor=0D1117&labelColor=0D1117" />
-<img src="https://img.shields.io/badge/kubernetes-00D9FF?style=flat-square&logo=kubernetes&logoColor=0D1117&labelColor=0D1117" />
-<img src="https://img.shields.io/badge/terraform-00D9FF?style=flat-square&logo=terraform&logoColor=0D1117&labelColor=0D1117" />
-<img src="https://img.shields.io/badge/aws-00D9FF?style=flat-square&logo=amazonwebservices&logoColor=0D1117&labelColor=0D1117" />
-<img src="https://img.shields.io/badge/postgresql-00D9FF?style=flat-square&logo=postgresql&logoColor=0D1117&labelColor=0D1117" />
-<img src="https://img.shields.io/badge/redis-00D9FF?style=flat-square&logo=redis&logoColor=0D1117&labelColor=0D1117" />
-<img src="https://img.shields.io/badge/datadog-00D9FF?style=flat-square&logo=datadog&logoColor=0D1117&labelColor=0D1117" />
+<img src="https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=cplusplus&logoColor=white" />
+<img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" />
+<img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
+<img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" />
+<img src="https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white" />
+</p>
+
+<p align="center">
+<img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" />
+<img src="https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white" />
+<img src="https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazonwebservices&logoColor=white" />
+<img src="https://img.shields.io/badge/GCP-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white" />
+<img src="https://img.shields.io/badge/Terraform-7B42BC?style=for-the-badge&logo=terraform&logoColor=white" />
+</p>
+
+<p align="center">
+<img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" />
+<img src="https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white" />
+<img src="https://img.shields.io/badge/Kafka-231F20?style=for-the-badge&logo=apachekafka&logoColor=white" />
+<img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white" />
+<img src="https://img.shields.io/badge/Elasticsearch-005571?style=for-the-badge&logo=elasticsearch&logoColor=white" />
+</p>
+
+<p align="center">
+<img src="https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=githubactions&logoColor=white" />
+<img src="https://img.shields.io/badge/Datadog-632CA6?style=for-the-badge&logo=datadog&logoColor=white" />
+<img src="https://img.shields.io/badge/Prometheus-E6522C?style=for-the-badge&logo=prometheus&logoColor=white" />
+<img src="https://img.shields.io/badge/Grafana-F46800?style=for-the-badge&logo=grafana&logoColor=white" />
 </p>
 
 ```
 ──────────────────────────────────────────────────────────────────────────────
-  languages   : python, go, node.js
-  runtime     : docker, kubernetes, ecs/fargate
-  data        : postgresql, redis, event-streams
-  cloud       : aws (lambda, sqs, sns, s3, athena)
-  tools       : terraform, github-actions, datadog
+  languages   : c++, java, python, typescript, go
+  runtime     : docker, kubernetes, ecs/fargate, lambda, cloud run
+  data        : postgresql, redis, kafka, mongodb, elasticsearch, s3, athena
+  cloud       : aws, gcp (compute, networking, storage, serverless)
+  tools       : terraform, github-actions, datadog, prometheus, grafana
 ```
-
-<!--
-WAKATIME STATS (uncomment if you use WakaTime)
-──────────────────────────────────────────────────────────────────────────────
-<div align="center">
-<img src="https://github-readme-stats.vercel.app/api/wakatime?username=YOUR_WAKATIME_USERNAME&theme=transparent&hide_border=true&bg_color=0D1117&title_color=00D9FF&text_color=FFFFFF&custom_title=coding%20time" width="400" />
-</div>
--->
 
 ```
 SYSTEM.CONF
@@ -115,9 +131,9 @@ NETWORK INTERFACES
 ```
 
 <p align="center">
-<a href="https://linkedin.com/in/YOUR_HANDLE"><img src="https://img.shields.io/badge/linkedin-connect-00D9FF?style=flat-square&logo=linkedin&logoColor=00D9FF&labelColor=0D1117&color=0D1117" /></a>
-<a href="mailto:YOUR_EMAIL"><img src="https://img.shields.io/badge/email-contact-00D9FF?style=flat-square&logo=gmail&logoColor=00D9FF&labelColor=0D1117&color=0D1117" /></a>
-<a href="https://github.com/maragaw"><img src="https://img.shields.io/badge/github-follow-00D9FF?style=flat-square&logo=github&logoColor=00D9FF&labelColor=0D1117&color=0D1117" /></a>
+<a href="https://linkedin.com/in/matthew-aragaw"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
+<a href="mailto:maragaw24@gmail.com"><img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white" /></a>
+<a href="https://github.com/maragaw"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" /></a>
 </p>
 
 ```
@@ -126,14 +142,12 @@ NETWORK INTERFACES
 
 <div align="center">
 
-```
-> session active
-> type 'help' to see pinned repositories
-```
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=12&duration=4000&pause=2000&color=00D9FF&center=true&vCenter=true&repeat=true&width=400&height=30&lines=%3E+session+active;%3E+type+'help'+to+see+pinned+repos)](https://git.io/typing-svg)
 
-<img src="https://komarev.com/ghpvc/?username=maragaw&label=active_sessions&color=00D9FF&style=flat-square&labelColor=0D1117" alt="sessions" />
+![Profile Views](https://komarev.com/ghpvc/?username=maragaw&label=active_sessions&color=00D9FF&style=for-the-badge)
 
 <br>
+
 <img src="https://github-readme-streak-stats.herokuapp.com/?user=maragaw&theme=transparent&hide_border=true&stroke=00D9FF&ring=00D9FF&fire=00D9FF&currStreakNum=00D9FF&sideNums=00D9FF&currStreakLabel=00D9FF&sideLabels=00D9FF&dates=555555&background=0D1117" width="400" />
 
 </div>
